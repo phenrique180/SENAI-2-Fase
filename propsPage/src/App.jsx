@@ -3,6 +3,7 @@ import Dado from './pages/Dado'
 import Sorteio from './pages/Sorteio'
 import Cadastro from './pages/Cadastro'
 import Home from './pages/Home'
+import Cofrinho from './pages/Cofrinho'
 
 function App() {
   
@@ -12,7 +13,8 @@ function App() {
       {/*<Home /> */}
       {/*<Cadastro /> */}
       {/*<Sorteio /> */}
-      <Dado />
+      {/*<Dado /> */}
+      <Cofrinho />
     </div>
   )
 }
