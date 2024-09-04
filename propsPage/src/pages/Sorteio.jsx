@@ -4,6 +4,7 @@ import './Sorteio.css'
 function Sorteio() {
   function sortear(){
     
+
     let numeroSorteado = Math.floor(Math.random() * (99 - 0) + 0);
     alert(`Numero sorteado: ${numeroSorteado}`)
 
