@@ -4,6 +4,7 @@ import Sorteio from './pages/Sorteio'
 import Cadastro from './pages/Cadastro'
 import Home from './pages/Home'
 import Cofrinho from './pages/Cofrinho'
+import Media from './pages/Media'
 
 function App() {
   
@@ -14,7 +15,8 @@ function App() {
       {/*<Cadastro /> */}
       {/*<Sorteio /> */}
       {/*<Dado /> */}
-      <Cofrinho />
+      {/*<Cofrinho /> */}
+      <Media />
     </div>
   )
 }
