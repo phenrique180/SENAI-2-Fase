@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Body from './components/Body';
+import Header from './components/Header';
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [fila, setFila] = useState([]);
+  const [filaPreferencial, setFilaPreferencial] = useState([]);
+
+  const gerarSenha = () => {
+    let senha = {
+      numero: Math.floor(Math.random() * 9000) + 1000,
+      tipo: 'normal',
+    };
+    setFila([...fila, senha]);
+  };
+
+  const gerarPreferencial = () => {
+    let senhaPreferencial = {
+      numero: Math.floor(Math.random() * 9000) + 1000,
+      tipo: 'preferencial',
+    };
+    setFilaPreferencial([...filaPreferencial, senhaPreferencial]);
+  };
+
+  const atender = () => {
+    if (filaPreferencial.length > 0) {
+      alert(`Atendendo preferencial: ${filaPreferencial[0].numero}`);
+      setFilaPreferencial(filaPreferencial.slice(1));
+    } else if (fila.length > 0) {
+      alert(`Atendendo normal: ${fila[0].numero}`);
+      setFila(fila.slice(1));
+    } else {
+      alert('Ninguém na fila.');
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app-container">
+      <Header />
+      <Body
+        fila={fila}
+        filaPreferencial={filaPreferencial}
+        gerarSenha={gerarSenha}
+        gerarPreferencial={gerarPreferencial}
+        atender={atender}
+      />
+    </div>
+  );
 }
+
 
 export default App
