@@ -148,3 +148,48 @@
         text-align: center;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
+    const [fila, setFila] = useState([]);
+  const [filaPreferencial, setFilaPreferencial] = useState([]);
+
+  const gerarSenha = () => {
+    let senha = {
+      numero: Math.floor(Math.random() * 9000) + 1000,
+      tipo: 'normal',
+    };
+    setFila([...fila, senha]);
+  };
+
+  const gerarPreferencial = () => {
+    let senhaPreferencial = {
+      numero: Math.floor(Math.random() * 9000) + 1000,
+      tipo: 'preferencial',
+    };
+    setFilaPreferencial([...filaPreferencial, senhaPreferencial]);
+  };
+
+  const atender = () => {
+    if (filaPreferencial.length > 0) {
+      alert(`Atendendo preferencial: ${filaPreferencial[0].numero}`);
+      setFilaPreferencial(filaPreferencial.slice(1));
+    } else if (fila.length > 0) {
+      alert(`Atendendo normal: ${fila[0].numero}`);
+      setFila(fila.slice(1));
+    } else {
+      alert('Ninguém na fila.');
+    }
+  };
+
+  return (
+    <div className="app-container">
+      <Header />
+      <Body
+        fila={fila}
+        filaPreferencial={filaPreferencial}
+        gerarSenha={gerarSenha}
+        gerarPreferencial={gerarPreferencial}
+        atender={atender}
+      />
+    </div>
+  );
+}

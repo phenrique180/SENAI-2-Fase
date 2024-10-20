@@ -14,6 +14,7 @@ function App() {
       tipo: 'normal',
     };
     setFila([...fila, senha]);
+    alert(`Senha normal gerada: ${senha.numero}`);
   };
 
   const gerarPreferencial = () => {
@@ -22,6 +23,7 @@ function App() {
       tipo: 'preferencial',
     };
     setFilaPreferencial([...filaPreferencial, senhaPreferencial]);
+    alert(`Senha preferencial gerada: ${senhaPreferencial.numero}`);
   };
 
   const atender = () => {
@@ -38,17 +40,20 @@ function App() {
 
   return (
     <div className="app-container">
-      <Header />
-      <Body
+      <Header 
         fila={fila}
         filaPreferencial={filaPreferencial}
         gerarSenha={gerarSenha}
         gerarPreferencial={gerarPreferencial}
         atender={atender}
       />
+      
+      <Body 
+        fila={fila}
+        filaPreferencial={filaPreferencial}
+      />
     </div>
   );
 }
 
-
-export default App
+export default App;
