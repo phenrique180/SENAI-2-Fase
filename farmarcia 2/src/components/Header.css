@@ -3,30 +3,37 @@
     color: var(--cor-4);
     border-bottom: 2px solid var(--cor-1);
     display: flex;
-    align-items: center; /* Alinha verticalmente os itens */
+    align-items: center;
     padding: 10px;
 }
 
 .header-container img {
     height: auto; 
-    width: 150px; 
+    width: 200px; 
     margin-right: 10px; 
 }
 
 .header-container h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0; 
-    font-size: xx-large;
-    flex-grow: 1; /* Permite que o h1 ocupe o espaço restante */
-    text-align: center; /* Centraliza o texto do título */
+    
+    flex: 1;
+    text-align: center;
+    padding-left: 200px; 
+    
 }
 
 .header-container button {
-    background-color: var(--cor-3); /* Cor de fundo do botão */
-    color: var(--cor-2); /* Cor do texto do botão */
-    border: none; /* Remove a borda */
-    padding: 10px 20px; /* Estilo do botão */
-    cursor: pointer; /* Mostra que é clicável */
-    border-radius: 5px; /* Arredonda os cantos do botão */
-    margin-left: 10px; /* Adiciona espaçamento à esquerda dos botões */
+    background-color: var(--cor-3); 
+    color: var(--cor-2); 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin-left: 3px; 
+    transition: background-color 0.3s, transform 0.2s;
 }
+
+button:hover {
+    background-color: var(--cor-4);
+    transform: scale(1.05);
+}
+  

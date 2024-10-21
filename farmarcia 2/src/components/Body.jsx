@@ -50,7 +50,7 @@ function Body({ fila, filaPreferencial }) {
               Depois de se formar na faculdade, Márcia se casou e começou a trabalhar em uma empresa de marketing, onde pôde desenvolver suas habilidades em design e gestão. No entanto, sua vida pessoal deu uma reviravolta quando seu casamento chegou ao fim após um evento no mínimo estranho. Seu marido saiu para comprar cigarros e nunca mais voltou, deixando Márcia sozinha para lidar com a dor do abandono e o desafio de reconstruir sua vida. <br /><br />
               Decidida a seguir em frente, Márcia viu na farmácia de seu tio Mário uma oportunidade de recomeçar. Ela comprou o negócio e começou a reformá-lo, aplicando suas habilidades em administração e design para transformá-lo em um espaço moderno e acolhedor. <br /><br />
               Enquanto renovava a farmácia, Márcia também decidiu investir em tecnologia para impulsionar o negócio. Ela implementou um sistema de gerenciamento de estoque automatizado e lançou um programa de fidelidade digital para os clientes, proporcionando uma experiência de compra mais conveniente e personalizada. <br /><br />
-              Agora, com a farmácia renovada e pronta para competir no mercado, Márcia está determinada a fazer da Farmárcia um sucesso. Ela está em busca de um programador de tecnologia para ajudá-la a desenvolver uma presença online robusta, incluindo um website responsivo e aplicativos móveis que ofereçam aos clientes uma experiência de compra moderna e simplificada. A história de Márcia é um testemunho de resiliência e determinação, mostrando como ela transformou uma adversidade em uma oportunidade de crescimento pessoal e profissional. Ahhh, e ela é muito mais feliz agora :D <br /><br />
+              Agora, com a farmácia renovada e pronta para competir no mercado, Márcia está determinada a fazer da Farmárcia um sucesso. Ela está em busca de um programador de tecnologia para ajudá-la a desenvolver uma presença online robusta, incluindo um website responsivo e aplicativos móveis que ofereçam aos clientes uma experiência de compra moderna e simplificada. A história de Márcia é um testemunho de resiliência e determinação, mostrando como ela transformou uma adversidade em uma oportunidade de crescimento pessoal e profissional. Ahhh, e ela é muito mais feliz agora. <br /><br />
             </p>
           </>
         ) : (
@@ -67,8 +67,8 @@ function Body({ fila, filaPreferencial }) {
           {fila.length === 0 ? (
             <p>Nenhuma senha normal gerada.</p>
           ) : (
-            fila.map((senha, index) => (
-              <div className="div-senha" key={index}>
+            fila.map((senha) => (
+              <div className="div-senha" key={senha.numero}>
                 <p>Senha: {senha.numero}</p>
                 <p>Tipo: {senha.tipo}</p>
               </div>
@@ -81,8 +81,8 @@ function Body({ fila, filaPreferencial }) {
           {filaPreferencial.length === 0 ? (
             <p>Nenhuma senha preferencial gerada.</p>
           ) : (
-            filaPreferencial.map((senhaPreferencial, index) => (
-              <div className="div-senha" key={index}>
+            filaPreferencial.map((senhaPreferencial) => (
+              <div className="div-senha" key={senhaPreferencial.numero}>
                 <p>Senha: {senhaPreferencial.numero}</p>
                 <p>Tipo: {senhaPreferencial.tipo}</p>
               </div>

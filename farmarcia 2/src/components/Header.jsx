@@ -3,7 +3,7 @@ import './Header.css';
 import farmarciaLogo from '../assets/images/farmarcia.png'
 
 
-const Header  = ({ fila, filaPreferencial, gerarSenha, gerarPreferencial, atender }) => {
+const Header  = ({ gerarSenha, gerarPreferencial, atender }) => {
   return (
     <div className="header-container">
       <img src={farmarciaLogo} alt="" />
